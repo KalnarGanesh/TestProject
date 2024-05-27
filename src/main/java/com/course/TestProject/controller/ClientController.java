@@ -31,11 +31,13 @@ public class ClientController {
         // Get the client details
         List<Client> clientList = clientRepository.findByLocation(location);
         System.out.println("clientList : " + clientList.size());
+
 //        if(null != clientList && !clientList.isEmpty()) {
-////            Map<String, List<Client>> clientMap = clientList.stream().filter(client -> client.getTrades().stream().anyMatch(trade -> trade.getAmount() > 300000))
-////                    .collect(Collectors.groupingBy(Function.identity(), Client::getLocation, Collectors.toMap()));
+//              Map<String, List<Client>> map = clientList.stream().filter(client -> client.getTrades().stream().anyMatch(trade -> trade.getAmount() > 300000))
+//                    .collect(Collectors.groupingBy(Client::getLocation));
 //        }
-        //}//
+
+
         Map<String, List<Client>> map = new HashMap<>();
         clientList.forEach(client -> {
             boolean check = false;
