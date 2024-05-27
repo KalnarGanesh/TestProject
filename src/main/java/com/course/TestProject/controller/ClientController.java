@@ -49,17 +49,13 @@ public class ClientController {
             }
             if(check) {
                 if (null == map.get(client.getLocation())) {
-                    ArrayList<Client> clients = new ArrayList<>();
-                    clients.add(client);
-                    map.put(client.getLocation(), clients);
+                    map.put(client.getLocation(), new ArrayList<>());
+                }
 
-                } else
-                    map.get(client.getLocation()).add(client);
+                map.get(client.getLocation()).add(client);
             }
 
             });
-
-
         return map;
     }
 
